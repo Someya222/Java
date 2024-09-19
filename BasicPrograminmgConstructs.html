@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe4f5;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #ffe4f5;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+        }
+
+        /* Styling for the main content */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for the code block */
+        .content pre {
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Wraps long lines */
+            margin: 0 auto; /* Centering the code block */
+            max-width: 80%; /* Setting a maximum width */
+        }
+
+        .content code {
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .content pre {
+                max-width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java_codes.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <section id="1">
+            <h2>Write a Java program to print ‘Hello World!’ on screen</h2>
+            <pre><code>
+                public class HelloWorld {
+                    public static void main(String[] args) {
+                        System.out.println("Hello World!");
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Hello World!
+            </code></pre>
+        </section>
+        <section id="2">
+            <h2>Write a Java program to print the sum of two numbers</h2>
+            <pre><code>
+                import java.io.BufferedReader;
+                import java.io.InputStreamReader;
+                import java.io.IOException;
+                
+                public class SumOfTwoNumbers {
+                    public static void main(String[] args) throws IOException {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                
+                        System.out.print("Enter the first number: ");
+                        int num1 = Integer.parseInt(reader.readLine());
+                        System.out.print("Enter the second number: ");
+                        int num2 = Integer.parseInt(reader.readLine());
+                
+                        int sum = num1 + num2;
+                
+                        System.out.println("Sum: " + sum);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Enter the first number: 22
+                Enter the second number: 11
+                Sum: 33
+            </code></pre>
+        </section>
+        <section id="3">
+            <h2>Write a Java program that takes two numbers and display the product of two
+                numbers</h2>
+            <pre><code>
+                import java.io.BufferedReader;
+                import java.io.InputStreamReader;
+                import java.io.IOException;
+                
+                public class ProductOfTwoNumbers {
+                    public static void main(String[] args) throws IOException {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                
+                        System.out.print("Enter the first number: ");
+                        int num1 = Integer.parseInt(reader.readLine());
+                        System.out.print("Enter the second number: ");
+                        int num2 = Integer.parseInt(reader.readLine());
+                
+                        int product = num1 * num2;
+                
+                        System.out.println("Product: " + product);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Enter the first number: 11
+                Enter the second number: 2
+                Product: 22
+            </code></pre>
+        </section>
+        <section id="4">
+            <h2>Write a Java program to print the sum, multiply, subtract, divide and remainder of two
+                numbers</h2>
+            <pre><code>
+                import java.io.BufferedReader;
+                import java.io.InputStreamReader;
+                import java.io.IOException;
+                
+                public class BasicOperations {
+                    public static void main(String[] args) throws IOException {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                
+                        System.out.print("Enter the first number: ");
+                        int num1 = Integer.parseInt(reader.readLine());
+                        System.out.print("Enter the second number: ");
+                        int num2 = Integer.parseInt(reader.readLine());
+                
+                        int sum = num1 + num2;
+                        int product = num1 * num2;
+                        int difference = num1 - num2;
+                        double quotient = (double) num1 / num2;
+                        int remainder = num1 % num2;
+                
+                        System.out.println("Sum: " + sum);
+                        System.out.println("Product: " + product);
+                        System.out.println("Difference: " + difference);
+                        System.out.println("Quotient: " + quotient);
+                        System.out.println("Remainder: " + remainder);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Enter the first number: 4
+                Enter the second number: 2
+                Sum: 6
+                Product: 8
+                Difference: 2
+                Quotient: 2.0
+                Remainder: 0
+            </code></pre>
+        </section>
+        <section id="5">
+            <h2>Write a Java program that takes five numbers as input to calculate and print the
+                average of the numbers</h2>
+            <pre><code>
+                import java.io.BufferedReader;
+                import java.io.InputStreamReader;
+                import java.io.IOException;
+                
+                public class AverageOfFiveNumbers {
+                    public static void main(String[] args) throws IOException {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                
+                        System.out.print("Enter the first number: ");
+                        double num1 = Double.parseDouble(reader.readLine());
+                        System.out.print("Enter the second number: ");
+                        double num2 = Double.parseDouble(reader.readLine());
+                        System.out.print("Enter the third number: ");
+                        double num3 = Double.parseDouble(reader.readLine());
+                        System.out.print("Enter the fourth number: ");
+                        double num4 = Double.parseDouble(reader.readLine());
+                        System.out.print("Enter the fifth number: ");
+                        double num5 = Double.parseDouble(reader.readLine());
+                
+                        double sum = num1 + num2 + num3 + num4 + num5;
+                        double average = sum / 5;
+                
+                        System.out.println("Average: " + average);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Enter the first number: 3
+                Enter the second number: 6
+                Enter the third number: 2
+                Enter the fourth number: 1
+                Enter the fifth number: 7
+                Average: 3.8
+                
+            </code></pre>
+        </section>
+        <section id="6">
+            <h2>Write a Java program to swap two variables</h2>
+            <pre><code>
+                import java.io.BufferedReader;
+                import java.io.InputStreamReader;
+                import java.io.IOException;
+                
+                public class SwapVariables {
+                    public static void main(String[] args) throws IOException {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                
+                        System.out.print("Enter the first variable: ");
+                        int a = Integer.parseInt(reader.readLine());
+                        System.out.print("Enter the second variable: ");
+                        int b = Integer.parseInt(reader.readLine());
+                
+                        int temp = a;
+                        a = b;
+                        b = temp;
+                
+                        System.out.println("After swapping:");
+                        System.out.println("First variable: " + a);
+                        System.out.println("Second variable: " + b);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Enter the first variable: 56
+                Enter the second variable: 89
+                After swapping:
+                First variable: 89
+                Second variable: 56
+                
+            </code></pre>
+        </section>
+    </div>
+</body>
+</html>

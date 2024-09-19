@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe4f5;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #ffe4f5;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+        }
+
+        /* Styling for the main content */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for the code block */
+        .content pre {
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Wraps long lines */
+            margin: 0 auto; /* Centering the code block */
+            max-width: 80%; /* Setting a maximum width */
+        }
+
+        .content code {
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .content pre {
+                max-width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java_codes.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <section id="1">
+            <h2>Enter the Matrix of rows and columns entered by the user and print in matrix format</h2>
+            <pre><code>
+                import java.io.BufferedReader;
+                import java.io.InputStreamReader;
+                import java.io.IOException;
+                
+                public class MatrixInput {
+                    public static void main(String[] args) throws IOException {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                
+                        System.out.print("Enter number of rows: ");
+                        int rows = Integer.parseInt(reader.readLine());
+                        System.out.print("Enter number of columns: ");
+                        int cols = Integer.parseInt(reader.readLine());
+                
+                        int[][] matrix = new int[rows][cols];
+                
+                        System.out.println("Enter the matrix elements:");
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                matrix[i][j] = Integer.parseInt(reader.readLine());
+                            }
+                        }
+                
+                        System.out.println("Matrix:");
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                System.out.print(matrix[i][j] + " ");
+                            }
+                            System.out.println();
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Enter number of rows: 2
+                Enter number of columns: 3
+                Enter the matrix elements:
+                1
+                2
+                3
+                4
+                5
+                6
+                Matrix:
+                1 2 3 
+                4 5 6
+            </code></pre>
+        </section>
+        <section id="2">
+            <h2>Program to Add Two Matrices</h2>
+            <pre><code>
+                import java.io.BufferedReader;
+                import java.io.InputStreamReader;
+                import java.io.IOException;
+                
+                public class MatrixAddition {
+                    public static void main(String[] args) throws IOException {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                
+                        System.out.print("Enter number of rows: ");
+                        int rows = Integer.parseInt(reader.readLine());
+                        System.out.print("Enter number of columns: ");
+                        int cols = Integer.parseInt(reader.readLine());
+                
+                        int[][] matrix1 = new int[rows][cols];
+                        int[][] matrix2 = new int[rows][cols];
+                        int[][] result = new int[rows][cols];
+                
+                        System.out.println("Enter elements for the first matrix:");
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                matrix1[i][j] = Integer.parseInt(reader.readLine());
+                            }
+                        }
+                
+                        System.out.println("Enter elements for the second matrix:");
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                matrix2[i][j] = Integer.parseInt(reader.readLine());
+                            }
+                        }
+                
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                result[i][j] = matrix1[i][j] + matrix2[i][j];
+                            }
+                        }
+                
+                        System.out.println("Resultant Matrix after addition:");
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                System.out.print(result[i][j] + " ");
+                            }
+                            System.out.println();
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Enter number of rows: 2
+                Enter number of columns: 3
+                Enter elements for the first matrix:
+                1
+                2
+                3
+                4
+                5
+                6
+                Enter elements for the second matrix:
+                9
+                8
+                7
+                6
+                5
+                4
+                Resultant Matrix after addition:
+                10 10 10 
+                10 10 10 
+            </code></pre>
+        </section>
+        <section id="3">
+            <h2>Program to Multiply Two Matrices</h2>
+            <pre><code>
+                import java.io.BufferedReader;
+                import java.io.InputStreamReader;
+                import java.io.IOException;
+                
+                public class MatrixMultiplication {
+                    public static void main(String[] args) throws IOException {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                
+                        System.out.print("Enter number of rows for the first matrix: ");
+                        int rows1 = Integer.parseInt(reader.readLine());
+                        System.out.print("Enter number of columns for the first matrix: ");
+                        int cols1 = Integer.parseInt(reader.readLine());
+                        System.out.print("Enter number of rows for the second matrix: ");
+                        int rows2 = Integer.parseInt(reader.readLine());
+                        System.out.print("Enter number of columns for the second matrix: ");
+                        int cols2 = Integer.parseInt(reader.readLine());
+                
+                        if (cols1 != rows2) {
+                            System.out.println("Matrix multiplication is not possible. Number of columns of the first matrix must be equal to the number of rows of the second matrix.");
+                            return;
+                        }
+                
+                        int[][] matrix1 = new int[rows1][cols1];
+                        int[][] matrix2 = new int[rows2][cols2];
+                        int[][] result = new int[rows1][cols2];
+                
+                        System.out.println("Enter elements for the first matrix:");
+                        for (int i = 0; i < rows1; i++) {
+                            for (int j = 0; j < cols1; j++) {
+                                matrix1[i][j] = Integer.parseInt(reader.readLine());
+                            }
+                        }
+                
+                        System.out.println("Enter elements for the second matrix:");
+                        for (int i = 0; i < rows2; i++) {
+                            for (int j = 0; j < cols2; j++) {
+                                matrix2[i][j] = Integer.parseInt(reader.readLine());
+                            }
+                        }
+                
+                        for (int i = 0; i < rows1; i++) {
+                            for (int j = 0; j < cols2; j++) {
+                                result[i][j] = 0;
+                                for (int k = 0; k < cols1; k++) {
+                                    result[i][j] += matrix1[i][k] * matrix2[k][j];
+                                }
+                            }
+                        }
+                
+                        System.out.println("Resultant Matrix after multiplication:");
+                        for (int i = 0; i < rows1; i++) {
+                            for (int j = 0; j < cols2; j++) {
+                                System.out.print(result[i][j] + " ");
+                            }
+                            System.out.println();
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Enter number of rows for the first matrix: 3
+                Enter number of columns for the first matrix: 3
+                Enter number of rows for the second matrix: 3
+                Enter number of columns for the second matrix: 3
+                Enter elements for the first matrix:
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                Enter elements for the second matrix:
+                8
+                4
+                8
+                1
+                5
+                2
+                6
+                3
+                9
+                Resultant Matrix after multiplication:
+                28 23 39 
+                73 59 96 
+                118 95 153 
+                
+            </code></pre>
+        </section>
+        <section id="4">
+            <h2>Program to subtract the two matrices</h2>
+            <pre><code>
+                import java.io.BufferedReader;
+                import java.io.InputStreamReader;
+                import java.io.IOException;
+                
+                public class MatrixSubtraction {
+                    public static void main(String[] args) throws IOException {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                
+                        System.out.print("Enter number of rows: ");
+                        int rows = Integer.parseInt(reader.readLine());
+                        System.out.print("Enter number of columns: ");
+                        int cols = Integer.parseInt(reader.readLine());
+                
+                        int[][] matrix1 = new int[rows][cols];
+                        int[][] matrix2 = new int[rows][cols];
+                        int[][] result = new int[rows][cols];
+                
+                        System.out.println("Enter elements for the first matrix:");
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                matrix1[i][j] = Integer.parseInt(reader.readLine());
+                            }
+                        }
+                
+                        System.out.println("Enter elements for the second matrix:");
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                matrix2[i][j] = Integer.parseInt(reader.readLine());
+                            }
+                        }
+                
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                result[i][j] = matrix1[i][j] - matrix2[i][j];
+                            }
+                        }
+                
+                        System.out.println("Resultant Matrix after subtraction:");
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                System.out.print(result[i][j] + " ");
+                            }
+                            System.out.println();
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Enter number of rows: 2
+                Enter number of columns: 2
+                Enter elements for the first matrix:
+                9
+                8
+                7
+                6
+                Enter elements for the second matrix:
+                1
+                2
+                3
+                4
+                Resultant Matrix after subtraction:
+                8 6 
+                4 2 
+            </code></pre>
+        </section> 
+        <section id="5">
+            <h2>Program to determine whether two matrices are equal</h2>
+            <pre><code>
+                import java.io.BufferedReader;
+                import java.io.InputStreamReader;
+                import java.io.IOException;
+                
+                public class MatrixEquality {
+                    public static void main(String[] args) throws IOException {
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                
+                        System.out.print("Enter number of rows: ");
+                        int rows = Integer.parseInt(reader.readLine());
+                        System.out.print("Enter number of columns: ");
+                        int cols = Integer.parseInt(reader.readLine());
+                
+                        int[][] matrix1 = new int[rows][cols];
+                        int[][] matrix2 = new int[rows][cols];
+                
+                        System.out.println("Enter elements for the first matrix:");
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                matrix1[i][j] = Integer.parseInt(reader.readLine());
+                            }
+                        }
+                
+                        System.out.println("Enter elements for the second matrix:");
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                matrix2[i][j] = Integer.parseInt(reader.readLine());
+                            }
+                        }
+                
+                        boolean isEqual = true;
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < cols; j++) {
+                                if (matrix1[i][j] != matrix2[i][j]) {
+                                    isEqual = false;
+                                    break;
+                                }
+                            }
+                            if (!isEqual) break;
+                        }
+                
+                        if (isEqual) {
+                            System.out.println("The matrices are equal.");
+                        } else {
+                            System.out.println("The matrices are not equal.");
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Enter number of rows: 2
+                Enter number of columns: 2
+                Enter elements for the first matrix:
+                9
+                8
+                7
+                6
+                Enter elements for the second matrix:
+                5
+                4
+                3
+                2
+                The matrices are not equal.
+            </code></pre>
+        </section>
+        <section id="">
+            <h2></h2>
+            <pre><code>
+
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+
+            </code></pre>
+        </section>
+        <section id="">
+            <h2></h2>
+            <pre><code>
+
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+
+            </code></pre>
+        </section>
+        <section id="">
+            <h2></h2>
+            <pre><code>
+
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+
+            </code></pre>
+        </section>
+        <section id="">
+            <h2></h2>
+            <pre><code>
+
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+
+            </code></pre>
+        </section></section>
+            <h2></h2>
+            <pre><code>
+
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+
+            </code></pre>
+        </section></section>
+            <h2></h2>
+            <pre><code>
+
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+
+            </code></pre>
+        </section></section>
+            <h2></h2>
+            <pre><code>
+
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+
+            </code></pre>
+        </section></section>
+            <h2></h2>
+            <pre><code>
+
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+
+            </code></pre>
+        </section></section>
+            <h2></h2>
+            <pre><code>
+
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+
+            </code></pre>
+        </section></section>
+            <h2></h2>
+            <pre><code>
+
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+
+            </code></pre>
+        </section>
+    </div>
+</body>
+</html>
